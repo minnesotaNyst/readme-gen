@@ -1,0 +1,27 @@
+{
+  "name": "readme-gen",
+  "version": "1.0.0",
+  "description": "This will be a file that automatically generates a readme.md file",
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minnesotaNyst/readme-gen.git"
+  },
+  "keywords": [
+    "readme",
+    "generator"
+  ],
+  "author": "Jake Nystrom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minnesotaNyst/readme-gen/issues"
+  },
+  "homepage": "https://github.com/minnesotaNyst/readme-gen#readme"
+}
