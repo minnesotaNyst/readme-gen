@@ -3,7 +3,12 @@ const fs = require('fs');
 const generateMarkdown = require('./src/generateMarkdown.js');
 
 // array of questions for user
-const promptUser = () => {
+const questions = () => {
+	console.log(`
+	===============
+	README MARKDOWN
+	===============
+	`);
 	return inquirer.prompt([
 		{
 			type: 'input',
@@ -36,20 +41,7 @@ const promptUser = () => {
 					return false;
 				}
 			}
-		}
-	]);
-};
-
-const questions = data => {
-	if (!data.info) {
-		data.info = [];
-	}
-	console.log(`
-	===============
-	README MARKDOWN
-	===============
-	`);
-	return inquirer.prompt([
+		},
 		{
 			type: 'input',
 			name: 'title',
@@ -92,27 +84,28 @@ const questions = data => {
 	]);
 };
 
-// function to write README file
-//function writeToFile(fileName, data) {}
+const mData = {
+	name: 'Jake',
+	github: 'minnesotaNyst',
+	title: 'Readme Generator',
+	description: "This is a descrtiption of the project. It should be as detailed as possible.",
+	confirmAbout: true,
+	about:
+		'Please feel free to call me Jake. To share a little about who I am, I will start with my professional life. As a motivated and goal oriented individual I embrace challenges; strive to help others learn and develop; work collaboratively with teams; push myself to further develop my current skill set and expect to succeed. On a more personal note, I am also a husband to an incredible wife and fur-father to an amazing pup. I enjoy days spent on the golf course and continually learning new things.',
+	languages: ['HTML', 'CSS'],
+	link: 'https://github.com/minnesotaNyst',
+	email: 'jnystrom38@gmail.com',
+	license: ['MIT', 'ICS'],
+};
 
-// function to initialize program
-//function init() {}
+questions().then(data => {
+	const pageMD = generateMarkdown(data);
 
-// function call to initialize program
-//init();
+	fs.writeFile('./g-readme.md', pageMD, err => {
+		if (err) throw new Error(err);
 
-/* const pageMD = generateMarkdown(data); */
-
-promptUser()
-	.then(questions)
-	.then(data => {
-		const pageMD = generateMarkdown(data);
-
-		fs.writeFile('./g-readme.md', pageMD, err => {
-			if (err) throw new Error(err);
-
-			console.log(
-				'Your README is complete! Check it out g-readme.md to see the output!'
-			);
-		});
+		console.log(
+			'Your README is complete! Check it out g-readme.md to see the output!'
+		);
 	});
+});
