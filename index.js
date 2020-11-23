@@ -80,6 +80,20 @@ const questions = () => {
 					return false;
 				}
 			}
+		},
+		{
+			type: 'checkbox',
+			name: 'licenses',
+			message: 'Are there any licenses associated with this project?',
+			choices: ['MIT', 'Eclipse', 'GNU', 'IBM', 'Mozilla'],
+			validate: licenses => {
+				if (licenses) {
+					return true;
+				} else {
+					console.log('Please select a license for your project...');
+					return false;
+				}
+			}
 		}
 	]);
 };
@@ -88,14 +102,15 @@ const mData = {
 	name: 'Jake',
 	github: 'minnesotaNyst',
 	title: 'Readme Generator',
-	description: "This is a descrtiption of the project. It should be as detailed as possible.",
+	description:
+		'This is a descrtiption of the project. It should be as detailed as possible.',
 	confirmAbout: true,
 	about:
 		'Please feel free to call me Jake. To share a little about who I am, I will start with my professional life. As a motivated and goal oriented individual I embrace challenges; strive to help others learn and develop; work collaboratively with teams; push myself to further develop my current skill set and expect to succeed. On a more personal note, I am also a husband to an incredible wife and fur-father to an amazing pup. I enjoy days spent on the golf course and continually learning new things.',
 	languages: ['HTML', 'CSS'],
 	link: 'https://github.com/minnesotaNyst',
 	email: 'jnystrom38@gmail.com',
-	license: ['MIT', 'ICS'],
+	licenses: ['MIT', 'ICS']
 };
 
 questions().then(data => {
@@ -103,6 +118,7 @@ questions().then(data => {
 
 	fs.writeFile('./g-readme.md', pageMD, err => {
 		if (err) throw new Error(err);
+		/* }); */
 
 		console.log(
 			'Your README is complete! Check it out g-readme.md to see the output!'
