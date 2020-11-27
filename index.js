@@ -108,10 +108,10 @@ const generateMarkdown = require('./src/generateMarkdown.js');
 			}
 		},
 		{
-			type: 'checkbox',
+			type: 'list',
 			name: 'licenses',
 			message: 'Are there any licenses associated with this project?',
-			choices: ['MIT', 'Eclipse', 'GNU', 'IBM', 'Mozilla'],
+			choices: ['MIT', 'Eclipse', 'IBM', 'Mozilla', 'Boost', 'Apache'],
 			validate: licensesInput => {
 				if ( licensesInput ) {
 					return true;
@@ -137,7 +137,7 @@ const mData = {
 	languages: ['HTML', 'CSS'],
 	repository: 'https://github.com/minnesotaNyst',
 	website: 'https://github.com/minnesotaNyst',
-	licenses: ['MIT']
+	licenses: 'Eclipse'
 };
 
 /* questions().then( data => { */

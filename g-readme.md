@@ -1,5 +1,4 @@
-# Readme Generator [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-    
+# Readme Generator [![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)
   
   ## Description
   This is a descrtiption of the project. It should be as detailed as possible.
@@ -21,7 +20,7 @@
   This is a descrtiption of the project. It should be as detailed as possible.
   NOTE: I have no idea what goes here yet...
   ## License
-  MIT
+  Eclipse
   NOTE: The licenses for the application need to be selected from a list of options with a badge that is added near the top of the README. In addition, there needs to be a notice added to this section of the README that explains which license the application is covered under.
   QUESTION: What are the options for licenses anyway?
   ## Contributing

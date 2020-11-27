@@ -1,11 +1,48 @@
+//use a switch statement function to determing which badge icon should be displayed at the top of the readme
 const generateBadges = licenseBadge => {
-	if (!licenseBadge) {
+	let result = '';
+
+	switch (licenseBadge) {
+		case 'MIT':
+			result = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+      `;
+			console.log(result);
+			break;
+		case 'Eclipse':
+			result =
+				'[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)';
+			break;
+		case 'IBM':
+			result =
+				'[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)';
+			break;
+		case 'Mozilla':
+			result =
+				'[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
+			break;
+		case 'Boost':
+			result =
+				'[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)';
+			break;
+		case 'Apache':
+			result =
+				'[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+			break;
+		default:
+			result = '';
+	}
+
+	return result;
+
+	/* if (!licenseBadge) {
 		return '';
 	} else if ((licenseBadge = 'MIT')) {
 		return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
     `;
-  }
-  //TODO: What licenses are we going to use? Is there a requirement?
+	} else if ((licenseBadge = 'Eclipse')) {
+		return '[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)';
+	} */
+	//TODO: What licenses are we going to use? Is there a requirement?
 };
 
 // function to generate markdown for README
