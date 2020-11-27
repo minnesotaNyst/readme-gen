@@ -4,7 +4,8 @@ const generateBadges = licenseBadge => {
 	} else if ((licenseBadge = 'MIT')) {
 		return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
     `;
-	}
+  }
+  //TODO: What licenses are we going to use? Is there a requirement?
 };
 
 // function to generate markdown for README
@@ -16,7 +17,7 @@ const generateMarkdown = mData => {
   ## Deployed
   ${mData.website}
   The above should include 
-  ###Table of Contents
+  ### Table of Contents
   - [Installation](#installation)
   - [Usage](#usage)
   - [License](#license)
