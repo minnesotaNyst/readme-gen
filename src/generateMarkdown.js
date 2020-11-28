@@ -33,16 +33,6 @@ const generateBadges = licenseBadge => {
 	}
 
 	return result;
-
-	/* if (!licenseBadge) {
-		return '';
-	} else if ((licenseBadge = 'MIT')) {
-		return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-    `;
-	} else if ((licenseBadge = 'Eclipse')) {
-		return '[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)';
-	} */
-	//TODO: What licenses are we going to use? Is there a requirement?
 };
 
 // function to generate markdown for README
