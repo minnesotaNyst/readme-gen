@@ -35,14 +35,26 @@ const generateBadges = licenseBadge => {
 	return result;
 };
 
+const generateAbout = aboutInput => {
+	if (!aboutInput) {
+		return '';
+	}
+	return `
+  ## About the Author
+
+  ${aboutInput}
+  
+  `;
+};
+
 // function to generate markdown for README
-const generateMarkdown = mData => {
-	return `# ${mData.title} ${generateBadges(mData.licenses)}
+const generateMarkdown = data => {
+	return `# ${data.title} ${generateBadges(data.licenses)}
   
   ## Description
-  ${mData.description}
+  ${data.description}
   ## Deployed
-  ${mData.website}
+  ${data.website}
   The above should include 
   ### Table of Contents
   - [Installation](#installation)
@@ -56,19 +68,19 @@ const generateMarkdown = mData => {
   ## Installation
   "If a prospective employer wanted to download and test the readme generator, they'd first clone the repo, then run the command 'npm install' to download the application's dependencies into the node_modules folder. For this reason, we never upload the node_modules folder into GitHub"
   ## Usage
-  ${mData.description}
+  ${data.description}
   NOTE: I have no idea what goes here yet...
   ## License
-  ${mData.licenses}
+  ${data.licenses}
   NOTE: The licenses for the application need to be selected from a list of options with a badge that is added near the top of the README. In addition, there needs to be a notice added to this section of the README that explains which license the application is covered under.
   QUESTION: What are the options for licenses anyway?
   ## Contributing
   ## Tests
   ## Questions
-  ${mData.name}
-  ${mData.email}
-  ## About the Author
-  ${mData.about}
+  ${data.name}
+  ${data.email}
+  
+  ${generateAbout(data.about)}
   NOTE: This section should contain your GitHub username with a link to your GitHub profile. In addition, this section of the README should include the entered email with instructions on how to reach out.
 `;
 };

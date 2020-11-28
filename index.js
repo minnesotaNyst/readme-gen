@@ -3,22 +3,22 @@ const fs = require('fs');
 const generateMarkdown = require('./src/generateMarkdown.js');
 
 // array of questions for user
-/* const questions = () => {
-	console.log( `
+const questions = () => {
+	console.log(`
 	===============
 	README MARKDOWN
 	===============
 	`);
-	return inquirer.prompt( [
+	return inquirer.prompt([
 		{
 			type: 'input',
 			name: 'name',
 			message: 'What is your name? (Required)',
 			validate: nameInput => {
-				if ( nameInput ) {
+				if (nameInput) {
 					return true;
 				} else {
-					console.log( 'Please enter your name!' );
+					console.log('Please enter your name!');
 					return false;
 				}
 			}
@@ -28,10 +28,10 @@ const generateMarkdown = require('./src/generateMarkdown.js');
 			name: 'email',
 			message: 'What is your email address? (Required)',
 			validate: emailInput => {
-				if ( emailInput ) {
+				if (emailInput) {
 					return true;
 				} else {
-					console.log( 'Please enter your email!' );
+					console.log('Please enter your email!');
 					return false;
 				}
 			}
@@ -47,8 +47,8 @@ const generateMarkdown = require('./src/generateMarkdown.js');
 			type: 'input',
 			name: 'about',
 			message: 'Provide some information about yourself:',
-			when: ( { confirmAbout } ) => {
-				if ( confirmAbout ) {
+			when: ({ confirmAbout }) => {
+				if (confirmAbout) {
 					return true;
 				} else {
 					return false;
@@ -60,10 +60,10 @@ const generateMarkdown = require('./src/generateMarkdown.js');
 			name: 'title',
 			message: 'What is the title of your project? (Requried)',
 			validate: titleInput => {
-				if ( titleInput ) {
+				if (titleInput) {
 					return true;
 				} else {
-					console.log( 'Please enter a project name!' );
+					console.log('Please enter a project name!');
 					return false;
 				}
 			}
@@ -73,10 +73,10 @@ const generateMarkdown = require('./src/generateMarkdown.js');
 			name: 'website',
 			message: 'Please provide a link to your published website:',
 			validate: websiteInput => {
-				if ( websiteInput ) {
+				if (websiteInput) {
 					return true;
 				} else {
-					console.log( 'Please provide your published website link!' );
+					console.log('Please provide your published website link!');
 					return false;
 				}
 			}
@@ -86,10 +86,10 @@ const generateMarkdown = require('./src/generateMarkdown.js');
 			name: 'repository',
 			message: 'Please provide a link to your repository:',
 			validate: repositoryInput => {
-				if ( repositoryInput ) {
+				if (repositoryInput) {
 					return true;
 				} else {
-					console.log( 'Please provide your repository link!' );
+					console.log('Please provide your repository link!');
 					return false;
 				}
 			}
@@ -97,12 +97,27 @@ const generateMarkdown = require('./src/generateMarkdown.js');
 		{
 			type: 'input',
 			name: 'description',
-			message: 'Please provide a thorough description and usage of your project:',
+			message:
+				'Please provide a thorough description and usage of your project:',
 			validate: descriptionInput => {
-				if ( descriptionInput ) {
+				if (descriptionInput) {
 					return true;
 				} else {
-					console.log( 'Please provide a description!' );
+					console.log('Please provide a description!');
+					return false;
+				}
+			}
+		},
+		{
+			type: 'checkbox',
+			name: 'languages',
+			message: 'Please select the license associated with this project',
+			choices: ['HTML', 'CSS', 'Javascript', 'Node', 'JQuery'],
+			validate: languagesInput => {
+				if (languagesInput) {
+					return true;
+				} else {
+					console.log('Please select a license for your project...');
 					return false;
 				}
 			}
@@ -110,21 +125,13 @@ const generateMarkdown = require('./src/generateMarkdown.js');
 		{
 			type: 'list',
 			name: 'licenses',
-			message: 'Are there any licenses associated with this project?',
-			choices: ['MIT', 'Eclipse', 'IBM', 'Mozilla', 'Boost', 'Apache'],
-			validate: licensesInput => {
-				if ( licensesInput ) {
-					return true;
-				} else {
-					console.log( 'Please select a license for your project...' );
-					return false;
-				}
-			}
+			message: 'Please select the license associated with this project',
+			choices: ['MIT', 'Eclipse', 'IBM', 'Mozilla', 'Boost', 'Apache']
 		}
-	] );
-}; */
+	]);
+};
 
-const mData = {
+/* const mData = {
 	name: 'Jake',
 	email: 'jnystrom38@gmail.com',
 	github: 'minnesotaNyst',
@@ -138,17 +145,17 @@ const mData = {
 	repository: 'https://github.com/minnesotaNyst',
 	website: 'https://github.com/minnesotaNyst',
 	licenses: 'Eclipse'
-};
+}; */
 
-/* questions().then( data => { */
-const pageMD = generateMarkdown(mData);
+questions().then(data => {
+	const pageMD = generateMarkdown(data);
 
-fs.writeFile('./g-readme.md', pageMD, err => {
-	if (err) throw new Error(err);
+	fs.writeFile('./g-readme.md', pageMD, err => {
+		if (err) throw new Error(err);
+		/* });
+		 */
+		console.log(
+			'Your README is complete! Check it out g-readme.md to see the output!'
+		);
+	});
 });
-
-/* console.log(
-	'Your README is complete! Check it out g-readme.md to see the output!'
-);
-} );
-} ); */
