@@ -6,7 +6,6 @@ const generateBadges = licenseBadge => {
 		case 'MIT':
 			result = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
       `;
-			console.log(result);
 			break;
 		case 'Eclipse':
 			result =
@@ -53,35 +52,59 @@ const generateMarkdown = data => {
   
   ## Description
   ${data.description}
-  ## Deployed
-  ${data.website}
-  The above should include 
-  ### Table of Contents
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [License](#license)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [Questions](#questions)
-  - [About](#about)
-  NOTE: When this section is used, the end user should be taken to each corresponding section of the README.
-  ## Installation
-  "If a prospective employer wanted to download and test the readme generator, they'd first clone the repo, then run the command 'npm install' to download the application's dependencies into the node_modules folder. For this reason, we never upload the node_modules folder into GitHub"
-  ## Usage
-  ${data.description}
-  NOTE: I have no idea what goes here yet...
-  ## License
-  ${data.licenses}
-  NOTE: The licenses for the application need to be selected from a list of options with a badge that is added near the top of the README. In addition, there needs to be a notice added to this section of the README that explains which license the application is covered under.
-  QUESTION: What are the options for licenses anyway?
-  ## Contributing
-  ## Tests
-  ## Questions
-  ${data.name}
-  ${data.email}
   
-  ${generateAbout(data.about)}
-  NOTE: This section should contain your GitHub username with a link to your GitHub profile. In addition, this section of the README should include the entered email with instructions on how to reach out.
+  ## Deployed
+  ${data.website}  
+  
+  ### Table of Contents
+  - [Installation](#installation)  
+  - [Usage](#usage)  
+  - [License](#license)  
+  - [Contributing](#contributing)  
+  - [Tests](#tests)  
+  - [Questions](#questions)  
+  - [About](#about)
+  
+  ## Installation  
+
+  1. To install and use ${
+		data.title
+	}, the end user should clone this project to a location on their local machine.  
+  2. Once the end user has cloned the repository, they should open the generator in their installed version of a text editor (Visual Studio).  
+  3. After the repository has been opened, run "npm init" in the terminal of thetext editor, or in the open terminal as long as the file path is at the root of the project. This will initialize the creation of a .json package (be sure to follow the prompts). 
+  4. The final step to installing the ${
+		data.title
+	} will be to run "npm install inquirer" in the terminal. This step will install the inquier package into the node_modules folder.  
+
+  **To run the program, write 'node index.js' in the terminal. Be sure to validate that the terminal is pointed to the program root**
+  
+  ## Usage
+  ${data.description}  
+  
+  ## License  
+  ${data.licenses} ${generateBadges(data.licenses)}  
+    
+  To learn more about what the license means, click on the badge icon displayed above or at the top of the ${
+		data.title
+	}
+
+  ## Contributing  
+  
+  ## Tests  
+    
+  Make sure to follow the prompts. If there is a requirement to document a field, that means it is neccesary data for the ${
+		data.title
+	} to run. If the prompt does not have a requirment listed, test this by leaving the data entry blank and moving on to the next section.
+
+
+  ## Questions
+  Thanks for looking at ${data.tile}, my name is ${
+		data.name
+	}! If you would like to reach me, feel free to write to ${
+		data.email
+	}. I will look forward to hearing from you!
+  
+  ${generateAbout(data.about)}  
 `;
 };
 
