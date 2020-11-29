@@ -109,6 +109,25 @@ const questions = () => {
 			}
 		},
 		{
+			type: 'input',
+			name: 'usage',
+			message: 'Please provide a use case for your project: (Required)',
+			validate: usageInput => {
+				if (usageInput) {
+					return true;
+				} else {
+					console.log('Please provide a use case!');
+					return false;
+				}
+			}
+		},
+		{
+			type: 'input',
+			name: 'contributors',
+			message:
+				'Please list any contributors of the project here: (Comma separated)'
+		},
+		{
 			type: 'checkbox',
 			name: 'languages',
 			message:

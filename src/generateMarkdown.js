@@ -63,8 +63,11 @@ const generateMarkdown = data => {
   - [Contributing](#contributing)  
   - [Tests](#tests)  
   - [Questions](#questions)  
-  - [About](#about)
+  - [About](#about)  
   
+  ## Usage  
+  ${data.usage}   
+
   ## Installation  
 
   1. To install and use ${
@@ -76,11 +79,8 @@ const generateMarkdown = data => {
 		data.title
 	} will be to run "npm install inquirer" in the terminal. This step will install the inquier package into the node_modules folder.  
 
-  **To run the program, write 'node index.js' in the terminal. Be sure to validate that the terminal is pointed to the program root**
-  
-  ## Usage
-  ${data.description}  
-  
+  **To run the program, write 'node index.js' in the terminal. Be sure to validate that the terminal is pointed to the program root**  
+    
   ## License  
   ${data.licenses} ${generateBadges(data.licenses)}  
     
@@ -90,6 +90,8 @@ const generateMarkdown = data => {
 
   ## Contributing  
   
+  ${data.contributors}  
+
   ## Tests  
     
   Make sure to follow the prompts. If there is a requirement to document a field, that means it is neccesary data for the ${
