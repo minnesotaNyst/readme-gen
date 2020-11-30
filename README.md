@@ -47,7 +47,7 @@ Make sure to follow the prompts. If there is a requirement to document a field, 
 
 ## Questions
 
-Thanks for looking at undefined, my name is Jake Nystrom! If you would like to reach me, feel free to write to jwm.nystrom@gmail.com. I will look forward to hearing from you!
+Thanks for looking at Readme Generator, my name is Jake Nystrom! If you would like to reach me, feel free to write to jwm.nystrom@gmail.com. I will look forward to hearing from you!
 
 ## About the Author
 
