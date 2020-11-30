@@ -98,7 +98,7 @@ const questions = () => {
 			type: 'input',
 			name: 'description',
 			message:
-				'Please provide a thorough description and usage of your project: (Required)',
+				'Please provide a thorough description of your project: (Required)',
 			validate: descriptionInput => {
 				if (descriptionInput) {
 					return true;
@@ -131,13 +131,13 @@ const questions = () => {
 			type: 'checkbox',
 			name: 'languages',
 			message:
-				'Please select the license associated with this project: (Required)',
+				'Please select the languages associated with this project: (Required)',
 			choices: ['HTML', 'CSS', 'Javascript', 'Node', 'JQuery'],
 			validate: languagesInput => {
 				if (languagesInput) {
 					return true;
 				} else {
-					console.log('Please select a license for your project...');
+					console.log('Please select a language for your project...');
 					return false;
 				}
 			}
