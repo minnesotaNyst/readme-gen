@@ -6,12 +6,12 @@ This application allows the end user to follow prompted questions that automatic
 
 ## Deployed
 
-https://minnesotanyst.github.io/readme-gen/
+Watch Me: https://drive.google.com/file/d/1FCLS5uxn_EHARQ-ulYhiNkT_RHcd3onC/view
 
 ### Table of Contents
 
-- [Installation](#installation)
 - [Usage](#usage)
+- [Installation](#installation)
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)

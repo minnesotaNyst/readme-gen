@@ -56,9 +56,9 @@ const generateMarkdown = data => {
   ## Deployed
   ${data.website}  
   
-  ### Table of Contents
-  - [Installation](#installation)  
+  ### Table of Contents  
   - [Usage](#usage)  
+  - [Installation](#installation)  
   - [License](#license)  
   - [Contributing](#contributing)  
   - [Tests](#tests)  
