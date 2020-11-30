@@ -100,7 +100,7 @@ const generateMarkdown = data => {
 
 
   ## Questions
-  Thanks for looking at ${data.tile}, my name is ${
+  Thanks for looking at ${data.title}, my name is ${
 		data.name
 	}! If you would like to reach me, feel free to write to ${
 		data.email
